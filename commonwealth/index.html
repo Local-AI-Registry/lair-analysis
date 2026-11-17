@@ -204,14 +204,35 @@ footer{font-size:14px;color:var(--muted)}
   <div class="wrap">
     <div class="stack">
       <span class="eyebrow">Part 2 of 5</span>
-      <h2>The slide has stopped</h2>
-      <p class="lede">We retired outdated posts, published in-depth pages your team approved, and fixed the site underneath. The drop ended the month we started. Next we turn steady into growth.</p>
+      <h2>The slide has stopped, and Google is warming up</h2>
+      <p class="lede">We retired outdated posts, published in-depth pages your team approved, and fixed the site underneath. The drop ended the month we started, and the signals underneath clicks are improving. These come straight from your Google Search Console.</p>
     </div>
     <div class="tiles" data-anim>
       <div class="tile a-rise"><div class="num coral">-27%</div><p><b>The drop before we started</b>, from about 630 Google clicks a week in spring to 462 in early September.</p></div>
       <div class="tile a-rise" style="animation-delay:.12s"><div class="num">450</div><p><b>Google clicks a week since we started</b>, holding steady between 420 and 483 for nine weeks.</p></div>
       <div class="tile a-rise" style="animation-delay:.24s"><div class="num">#1</div><p><b>On Google for "commonwealth eye surgery louisville ky"</b>, so patients who know your name find you first.</p></div>
     </div>
+
+    <div class="grid2">
+      <div class="panel stack" data-anim>
+        <h3>More searchers click on you</h3>
+        <p class="muted">The share of people who click when Google shows your site. Weekly.</p>
+        <svg class="chart" id="ctr" viewBox="0 0 480 300" role="img" aria-label="Google click rate by week, July to November 2026: about 0.75 percent in July, rising to between 0.89 and 0.98 percent in October and November."></svg>
+        <p><b>October and November are your two best months</b> for click rate in the last 16 months.</p>
+      </div>
+      <div class="panel stack" data-anim>
+        <h3>You show up higher</h3>
+        <p class="muted">Your average position in Google results. Weekly. Higher on the chart is better.</p>
+        <svg class="chart" id="pos" viewBox="0 0 480 300" role="img" aria-label="Average Google position by week, July to November 2026: worsened to 13.0 in late August, improved to 9.6 by November."></svg>
+        <p><b>From 13.0 to 9.6 on average</b>, back on page one, since late August.</p>
+      </div>
+    </div>
+    <div class="tiles" data-anim>
+      <div class="tile a-rise"><div class="num">587</div><p><b>Times Google showed your new Louisville page</b> in its first weeks live, published October 28.</p></div>
+      <div class="tile a-rise" style="animation-delay:.12s"><div class="num">Top 10</div><p><b>Where Google already ranks two new pages</b>: How Co-Management Works (6.7) and How Our Content Is Reviewed (7.4).</p></div>
+      <div class="tile a-rise" style="animation-delay:.24s"><div class="num">8</div><p><b>New Google AI answers that cite your site</b> since we started in <span class="nb">mid-September.</span></p></div>
+    </div>
+    <p class="src">Click rate and position: your Google Search Console, web search, weeks ending November 14. Average position also improves when Google stops showing a site for far-off searches, so we read it next to clicks, not alone. New pages: Search Console totals for each page since it went live. AI answers: DataForSEO's index of Google AI answers for the United States, pulled November 16.</p>
     <div class="callout"><b>Where growth comes from next.</b> On Google, your site still sits far down for "lasik eye surgery louisville ky" (average position 35) and low on page one for "cataract surgery louisville" (about 10th). The LASIK and cataract pages are built to move those up. Google also started a new core update on November 10, and we will report its effect next month.</div>
   </div>
 </section>
@@ -377,7 +398,8 @@ footer{font-size:14px;color:var(--muted)}
       <div class="panel"><span class="num">01</span><b>LASIK</b><p class="muted">ChatGPT does not name Commonwealth for "lasik louisville" yet. Four LASIK pages are written and waiting for your and Dr. Piracha's review.</p></div>
       <div class="panel"><span class="num">02</span><b>Cataract surgery</b><p class="muted">Build cataract pages the same way as the EVO ICL, PRK and lens exchange pages that now come first.</p></div>
       <div class="panel"><span class="num">03</span><b>Gemini</b><p class="muted">Gemini does not name Commonwealth yet, and it lists Dr. Piracha under a former practice. We will correct the old doctor listings it relies on.</p></div>
-      <div class="panel"><span class="num">04</span><b>Track what patients shop for</b><p class="muted">Add LASIK, cataract, EVO ICL, PRK and lens exchange searches to your dashboard, so every monthly report measures them.</p></div>
+      <div class="panel"><span class="num">04</span><b>Clear out thin pages</b><p class="muted">Google has shown 441 old tag and category pages from your site in the last 16 months, together earning about 300 clicks. These thin pages are what core updates push sites down for. We will retire or hide them, with your approval.</p></div>
+      <div class="panel"><span class="num">05</span><b>Track what patients shop for</b><p class="muted">Add LASIK, cataract, EVO ICL, PRK and lens exchange searches to your dashboard, so every monthly report measures them.</p></div>
     </div>
     <footer class="stack" style="border-top:1px solid var(--line);padding-top:24px">
       <p>Sources: your Google Search Console for commonwealtheyes.com, exported November 16, 2026; Google Search Status Dashboard via Search Engine Journal for core update dates; the AI audit our platform ran for Commonwealth on September 3, 2026; live ChatGPT screenshots from November 16, 2026. AI answers change from one ask to the next, so treat them as a snapshot.</p>
@@ -428,6 +450,25 @@ el('text',{x:x(16),y:y(690)-6,'text-anchor':'middle',class:'t-big',style:'font-s
 // steady bracket
 el('path',{d:`M${x(23)} ${y(380)} V${y(365)} H${x(31)} V${y(380)}`,fill:'none',stroke:'var(--blue)','stroke-width':3},s);
 el('text',{x:(x(23)+x(31))/2,y:y(365)+24,'text-anchor':'middle',class:'t-big',style:'font-size:18px;fill:var(--blue)'},s,'Holding at about 450 a week');
+
+(function(){const L=['Jul','','','','Aug','','','','','Sep','','','','Oct','','','','Nov',''];
+const C=[.75,.74,.73,.75,.76,.76,.87,.88,.77,.79,.75,.80,.84,.88,.98,.90,.97,.89,.91];
+const P=[10.9,10.1,10.8,12.2,11.8,12.8,12.7,13.0,11.5,11.2,9.6,8.8,9.8,10.2,10.4,10.3,9.6,9.5,9.6];
+function mini(id,vals,min,max,inv,fmt,ticks,lab0,lab1){const s=document.getElementById(id);const W=480,H=300,Lm=50,R=20,T=30,B=40;
+const x=i=>Lm+(W-Lm-R)*i/(vals.length-1);const y=v=>{let f=(v-min)/(max-min);if(inv)f=1-f;return T+(H-T-B)*(1-f)};
+ticks.forEach(v=>{el('line',{x1:Lm,x2:W-R,y1:y(v),y2:y(v),class:'gridline'},s);el('text',{x:Lm-8,y:y(v)+5,'text-anchor':'end',style:'font-size:13px'},s,fmt(v))});
+const st=x(10)-(x(1)-x(0))/2;el('rect',{x:st,y:T-20,width:W-R-st,height:H-B-T+20,fill:'var(--blue-soft)'},s);
+el('text',{x:st+6,y:T-6,class:'t-lab t-blue',style:'font-size:12px'},s,'With LAIR');
+let d='';vals.forEach((v,i)=>d+=(i?'L':'M')+x(i)+' '+y(v));
+el('path',{d,fill:'none',stroke:'var(--muted)','stroke-width':2.5,'stroke-linejoin':'round'},s);
+let d2='';for(let i=10;i<vals.length;i++)d2+=(i>10?'L':'M')+x(i)+' '+y(vals[i]);
+const p=el('path',{d:d2,fill:'none',stroke:'var(--blue)','stroke-width':4,'stroke-linejoin':'round','stroke-linecap':'round',class:'a-draw'},s);const len=Math.ceil(p.getTotalLength?p.getTotalLength():600);p.style.setProperty('--len',len);p.setAttribute('stroke-dasharray',len);
+L.forEach((t,i)=>{if(t)el('text',{x:x(i),y:H-B+24,'text-anchor':'middle',class:'t-lab t-fg',style:'font-size:13px'},s,t)});
+el('circle',{cx:x(lab0[0]),cy:y(vals[lab0[0]]),r:5,fill:'var(--fg)'},s);el('text',{x:x(lab0[0])+(lab0[0]==0?8:0),y:y(vals[lab0[0]])+lab0[2],'text-anchor':lab0[0]==0?'start':'middle',class:'t-big',style:'font-size:14px'},s,lab0[1]);
+el('circle',{cx:x(lab1[0]),cy:y(vals[lab1[0]]),r:6,fill:'var(--blue)'},s);el('text',{x:x(lab1[0])-8,y:y(vals[lab1[0]])+lab1[2],'text-anchor':'end',class:'t-big',style:'font-size:15px;fill:var(--blue)'},s,lab1[1]);}
+mini('ctr',C,.6,1.05,false,v=>v.toFixed(1)+'%',[.6,.7,.8,.9,1.0],[0,'0.75%',22],[18,'0.91%',26]);
+mini('pos',P,8,14,true,v=>'#'+v,[8,10,12,14],[7,'13.0',20],[18,'9.6',-12]);
+})();
 // play on view
 const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(!reduce&&'IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('play');io.unobserve(e.target)}}),{threshold:.25});document.querySelectorAll('[data-anim]').forEach(n=>io.observe(n));}
