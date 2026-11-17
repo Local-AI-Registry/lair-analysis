@@ -139,6 +139,8 @@ footer{font-size:14px;color:var(--muted)}
 .play .card3{animation:up1 .7s ease-out backwards}.play .card2{animation:up1 .7s ease-out backwards .15s}.play .card1{animation:up1 .7s ease-out backwards .3s}
 .diag-m{display:none;max-width:360px;margin:0 auto}
 @media (max-width:640px){.diag-d{display:none}.diag-m{display:block}}
+.legend{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:14px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:8px}
 </style>
 </head>
 <body>
@@ -205,7 +207,7 @@ footer{font-size:14px;color:var(--muted)}
     <div class="stack">
       <span class="eyebrow">Part 2 of 5</span>
       <h2>The slide has stopped, and Google is warming up</h2>
-      <p class="lede">We retired outdated posts, published in-depth pages your team approved, and fixed the site underneath. The drop ended the month we started, and the signals underneath clicks are improving. These come straight from your Google Search Console.</p>
+      <p class="lede">We retired outdated posts, published in-depth pages your team approved, and fixed the site underneath. The drop ended the month we started, and the signals underneath clicks are improving. These come straight from your own Google Search Console, Google Analytics and Google Business Profile.</p>
     </div>
     <div class="tiles" data-anim>
       <div class="tile a-rise"><div class="num coral">-27%</div><p><b>The drop before we started</b>, from about 630 Google clicks a week in spring to 462 in early September.</p></div>
@@ -213,6 +215,20 @@ footer{font-size:14px;color:var(--muted)}
       <div class="tile a-rise" style="animation-delay:.24s"><div class="num">#1</div><p><b>On Google for "commonwealth eye surgery louisville ky"</b>, so patients who know your name find you first.</p></div>
     </div>
 
+
+    <div class="panel stack" data-anim>
+      <span class="eyebrow">New from Google this month</span>
+      <h3>Google's AI answers show your site 40% more than before we started</h3>
+      <p class="muted">Google now reports how often a site appears inside its AI Overviews and AI Mode answers. Weekly, Monday to Saturday.</p>
+      <div class="scroll-x"><svg class="chart" id="aif" viewBox="0 0 960 420" role="img" aria-label="Weekly impressions of commonwealtheyes.com in Google AI Overviews and AI Mode, May to November 2026. About 6,400 a week in August and early September, about 8,900 a week since mid-September, and 10,727 in the week of November 9." style="min-width:640px"></svg></div>
+      <div class="legend"><span><svg width="26" height="10" aria-hidden="true"><line x1="0" x2="26" y1="5" y2="5" stroke="#0B1A2E" stroke-width="2" stroke-dasharray="6 5"/></svg> Average before we started: about 6,360 a week</span><span><svg width="26" height="10" aria-hidden="true"><line x1="0" x2="26" y1="5" y2="5" stroke="#1F4FE0" stroke-width="2" stroke-dasharray="6 5"/></svg> Average since: about 8,890 a week</span></div>
+      <p class="src">Source: your Google Search Console, "Search generative AI features" report for commonwealtheyes.com, exported November 16, 2026. Google started this report in May 2026.</p>
+    </div>
+    <div class="tiles" data-anim>
+      <div class="tile a-rise"><div class="num">+40%</div><p><b>More appearances in Google's AI answers</b>: about 6,360 a week before we started, about 8,890 a week since.</p></div>
+      <div class="tile a-rise" style="animation-delay:.12s"><div class="num">10,727</div><p><b>Appearances last week</b>, the most since June. Since we started, the weekly average is also above May and July, before the core update.</p></div>
+      <div class="tile a-rise" style="animation-delay:.24s"><div class="num">72%</div><p><b>Of visitors from ChatGPT and other AI assistants stayed and engaged</b>, the highest of any traffic source. 18 visits since late September.</p></div>
+    </div>
     <div class="grid2">
       <div class="panel stack" data-anim>
         <h3>More searchers click on you</h3>
@@ -430,7 +446,7 @@ footer{font-size:14px;color:var(--muted)}
       <div class="panel"><span class="num">05</span><b>Track what patients shop for</b><p class="muted">Add LASIK, cataract, EVO ICL, PRK and lens exchange searches to your dashboard, so every monthly report measures them.</p></div>
     </div>
     <footer class="stack" style="border-top:1px solid var(--line);padding-top:24px">
-      <p>Sources: your Google Search Console for commonwealtheyes.com, exported November 16, 2026; Google Search Status Dashboard via Search Engine Journal for core update dates; the AI audit our platform ran for Commonwealth on September 3, 2026; live ChatGPT screenshots from November 16, 2026. AI answers change from one ask to the next, so treat them as a snapshot.</p>
+      <p>Sources: your Google Search Console for commonwealtheyes.com, including its AI features report, exported November 16, 2026; your Google Analytics (recording from September 22, 2026); your Google Business Profile Performance report; Google Search Status Dashboard via Search Engine Journal for core update dates; the AI audit our platform ran for Commonwealth on September 3, 2026; live ChatGPT screenshots from November 16, 2026. AI answers change from one ask to the next, so treat them as a snapshot.</p>
       <p>AI is evolving every day, and Local AI Registry's dedicated local AI research team is always figuring out the best approach.</p>
       <p><b style="color:var(--fg)">Steve Lee</b>, CEO and Founder, Local AI Registry · <span class="nb">347-292-9294</span> · 9891 Irvine Center Dr, Irvine, CA 92618</p>
     </footer>
@@ -496,6 +512,32 @@ el('circle',{cx:x(lab0[0]),cy:y(vals[lab0[0]]),r:5,fill:'var(--fg)'},s);el('text
 el('circle',{cx:x(lab1[0]),cy:y(vals[lab1[0]]),r:6,fill:'var(--blue)'},s);el('text',{x:x(lab1[0])-8,y:y(vals[lab1[0]])+lab1[2],'text-anchor':'end',class:'t-big',style:'font-size:15px;fill:var(--blue)'},s,lab1[1]);}
 mini('ctr',C,.6,1.05,false,v=>v.toFixed(1)+'%',[.6,.7,.8,.9,1.0],[0,'0.75%',22],[18,'0.91%',26]);
 mini('pos',P,8,14,true,v=>'#'+v,[8,10,12,14],[7,'13.0',20],[18,'9.6',-12]);
+})();
+
+(function(){const s=document.getElementById('aif');
+const D=[["2026-05-18",8026],["2026-05-25",6742],["2026-06-01",7414],["2026-06-08",7283],["2026-06-15",33527],["2026-06-22",14635],["2026-06-29",8855],["2026-07-06",9251],["2026-07-13",7611],["2026-07-20",8536],["2026-07-27",7564],["2026-08-03",6473],["2026-08-10",6909],["2026-08-17",5263],["2026-08-24",5969],["2026-08-31",6985],["2026-09-07",6540],["2026-09-14",9214],["2026-09-21",8716],["2026-09-28",8531],["2026-10-05",9559],["2026-10-12",7881],["2026-10-19",8155],["2026-10-26",8270],["2026-11-02",8975],["2026-11-09",10727]];
+const W=960,H=420,L=70,R=30,T=60,B=50,min=4000,max=12000;
+const x=i=>L+(W-L-R)*i/(D.length-1), y=v=>T+(H-T-B)*(1-(Math.min(v,max)-min)/(max-min));
+[4000,6000,8000,10000,12000].forEach(v=>{el('line',{x1:L,x2:W-R,y1:y(v),y2:y(v),class:'gridline'},s);el('text',{x:L-10,y:y(v)+5,'text-anchor':'end'},s,v.toLocaleString())});
+const half=(x(1)-x(0))/2, st=x(17)-half;
+el('rect',{x:st,y:T-30,width:W-R-st+10,height:H-B-T+30,fill:'var(--blue-soft)'},s);
+el('text',{x:st+8,y:T-14,class:'t-lab t-blue',style:'font-size:13px'},s,'With Local AI Registry');
+let d='';D.forEach((r,i)=>d+=(i?'L':'M')+x(i)+' '+y(r[1]));
+const p=el('path',{d,fill:'none',stroke:'var(--muted)','stroke-width':3,'stroke-linejoin':'round',class:'a-draw'},s);
+const len=Math.ceil(p.getTotalLength?p.getTotalLength():2000);p.style.setProperty('--len',len);p.setAttribute('stroke-dasharray',len);
+let d2='';for(let i=16;i<D.length;i++)d2+=(i>16?'L':'M')+x(i)+' '+y(D[i][1]);
+el('path',{d:d2,fill:'none',stroke:'var(--blue)','stroke-width':5,'stroke-linejoin':'round','stroke-linecap':'round'},s);
+for(let i=17;i<D.length;i++)el('circle',{cx:x(i),cy:y(D[i][1]),r:5,fill:'var(--blue)'},s);
+el('circle',{cx:x(4),cy:y(12000),r:5,fill:'var(--muted)'},s);
+el('text',{x:x(4),y:T-14,'text-anchor':'middle',style:'font-size:13px'},s,'June spike: 33,527');
+// before/after averages
+el('line',{x1:x(11),x2:x(16),y1:y(6357),y2:y(6357),stroke:'var(--fg)','stroke-width':2,'stroke-dasharray':'6 5'},s);
+
+el('line',{x1:x(17),x2:x(25),y1:y(8892),y2:y(8892),stroke:'var(--blue)','stroke-width':2,'stroke-dasharray':'6 5'},s);
+
+el('text',{x:x(25)-6,y:y(10727)-14,'text-anchor':'end',class:'t-big',style:'font-size:16px;fill:var(--blue)'},s,'10,727');
+const months={"2026-06-01":"Jun","2026-07-06":"Jul","2026-08-03":"Aug","2026-08-31":"Sep","2026-10-05":"Oct","2026-11-02":"Nov","2026-05-18":"May"};
+D.forEach((r,i)=>{if(months[r[0]])el('text',{x:x(i),y:H-B+26,'text-anchor':'middle',class:'t-lab t-fg'},s,months[r[0]])});
 })();
 // play on view
 const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
