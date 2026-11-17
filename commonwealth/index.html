@@ -114,6 +114,31 @@ footer{font-size:14px;color:var(--muted)}
   .shot .cap{flex-wrap:wrap}
 }
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important}}
+
+.xcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px;display:grid;gap:10px;align-content:start}
+.xcard svg{width:120px;height:90px;overflow:visible}
+.xcard b{font-family:var(--f-label);font-weight:700;font-size:19px;line-height:1.25}
+.xcard p{font-size:16px;color:var(--muted)}
+.xcard .why{color:var(--fg);border-top:1px solid var(--line);padding-top:10px}
+.xcard .why span{display:block;font-family:var(--f-label);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:2px}
+@keyframes flow{to{stroke-dashoffset:-24}}
+.flow{stroke-dasharray:7 5;animation:flow 1.1s linear infinite}
+@keyframes pulse{0%{opacity:.6;transform:scale(1)}100%{opacity:0;transform:scale(1.35)}}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 2s ease-out infinite}
+@keyframes dropin{0%{transform:translateY(-26px);opacity:0}60%{transform:translateY(3px);opacity:1}100%{transform:translateY(0)}}
+.play .drop{animation:dropin .9s ease-out backwards .2s}
+@keyframes popl{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+.play .pop-loop{transform-box:fill-box;transform-origin:center;animation:popl 1.8s ease-in-out infinite .4s}
+@keyframes fadeaway{to{opacity:.15}}
+.play .fade1{animation:fadeaway 1.2s ease-out forwards .3s}.play .fade2{animation:fadeaway 1.2s ease-out forwards .6s}
+@keyframes joinL{from{transform:translateX(-14px)}}@keyframes joinR{from{transform:translateX(14px)}}
+.play .link-l{animation:joinL 1s cubic-bezier(.2,.8,.2,1) backwards .2s}.play .link-r{animation:joinR 1s cubic-bezier(.2,.8,.2,1) backwards .2s}
+@keyframes spoke{from{stroke-dashoffset:60}}
+.spoke{stroke-dasharray:60}.play .spoke{animation:spoke .8s ease-out backwards}
+@keyframes up1{from{transform:translateY(40px);opacity:0}}
+.play .card3{animation:up1 .7s ease-out backwards}.play .card2{animation:up1 .7s ease-out backwards .15s}.play .card1{animation:up1 .7s ease-out backwards .3s}
+.diag-m{display:none;max-width:360px;margin:0 auto}
+@media (max-width:640px){.diag-d{display:none}.diag-m{display:block}}
 </style>
 </head>
 <body>
@@ -228,18 +253,118 @@ footer{font-size:14px;color:var(--muted)}
   <div class="wrap">
     <div class="stack">
       <span class="eyebrow">Part 4 of 5</span>
-      <h2>What we did</h2>
-      <p class="lede">AI and Google both reward a practice they can describe clearly and confirm across the web. That is what we have been building since September.</p>
+      <h2>What we did, and why it works</h2>
+      <p class="lede">AI doesn't pick a practice at random. It searches the web, checks what it finds, and names the practices it can describe and confirm. Everything we did since September feeds that check.</p>
     </div>
-    <div class="tiles" data-anim>
-      <div class="tile a-rise"><div class="num">8</div><p><b>New or rewritten pages</b>, all approved by your team, including the Louisville office page and doctor bios.</p></div>
-      <div class="tile a-rise" style="animation-delay:.08s"><div class="num">104</div><p><b>Broken links fixed</b>, plus a browser security warning removed site wide.</p></div>
-      <div class="tile a-rise" style="animation-delay:.16s"><div class="num">13</div><p><b>Directory listings live</b>, the sources AI checks to confirm a practice is real.</p></div>
-      <div class="tile a-rise" style="animation-delay:.24s"><div class="num">20+</div><p><b>Google posts</b> on LASIK, PRK, EVO ICL, lens exchange and cataract surgery, plus 11 photos and 6 review replies.</p></div>
+
+    <div class="panel stack" data-anim>
+      <h3>How ChatGPT decides who to recommend</h3>
+      <div class="scroll-x diag-d"><svg class="chart" viewBox="0 0 960 380" role="img" aria-label="A patient asks ChatGPT for an EVO ICL surgeon in Louisville. ChatGPT checks your website, directory listings and Google listing, then names Commonwealth Eye Surgery first." style="min-width:680px">
+        <!-- question -->
+        <g class="a-rise">
+          <rect x="10" y="150" width="200" height="74" rx="18" fill="var(--blue)"/>
+          <text x="110" y="181" text-anchor="middle" style="fill:#fff;font-size:14px" class="t-lab">"evo icl surgeon</text>
+          <text x="110" y="201" text-anchor="middle" style="fill:#fff;font-size:14px" class="t-lab">louisville ky"</text>
+          <text x="110" y="250" text-anchor="middle" style="font-size:13px">A patient asks</text>
+        </g>
+        <!-- links -->
+        <path d="M210 187 H300" class="flow" stroke="var(--blue)" stroke-width="3" fill="none"/>
+        <path d="M380 187 C420 187 420 70 470 70" class="flow" stroke="var(--blue)" stroke-width="3" fill="none"/>
+        <path d="M380 187 H470" class="flow" stroke="var(--blue)" stroke-width="3" fill="none"/>
+        <path d="M380 187 C420 187 420 304 470 304" class="flow" stroke="var(--blue)" stroke-width="3" fill="none"/>
+        <path d="M690 70 C730 70 730 187 770 187" class="flow" stroke="var(--blue)" stroke-width="3" fill="none"/>
+        <path d="M690 187 H770" class="flow" stroke="var(--blue)" stroke-width="3" fill="none"/>
+        <path d="M690 304 C730 304 730 187 770 187" class="flow" stroke="var(--blue)" stroke-width="3" fill="none"/>
+        <!-- AI -->
+        <g class="a-pop" style="animation-delay:.3s">
+          <circle cx="340" cy="187" r="42" fill="var(--fg)"/>
+          <circle cx="340" cy="187" r="52" fill="none" stroke="var(--fg)" stroke-opacity=".2" stroke-width="2" class="pulse"/>
+          <text x="340" y="194" text-anchor="middle" class="t-lab" style="fill:#fff;font-size:18px">AI</text>
+          <text x="340" y="260" text-anchor="middle" style="font-size:13px">searches and checks</text>
+        </g>
+        <!-- sources -->
+        <g class="a-rise" style="animation-delay:.5s">
+          <rect x="470" y="34" width="220" height="72" rx="12" fill="var(--panel)" stroke="var(--line)" stroke-width="2"/>
+          <text x="486" y="62" class="t-lab t-fg" style="font-size:15px">Your website</text>
+          <text x="486" y="84" style="font-size:13px">Louisville, EVO ICL and bio pages</text>
+        </g>
+        <g class="a-rise" style="animation-delay:.65s">
+          <rect x="470" y="151" width="220" height="72" rx="12" fill="var(--panel)" stroke="var(--line)" stroke-width="2"/>
+          <text x="486" y="179" class="t-lab t-fg" style="font-size:15px">13 directory listings</text>
+          <text x="486" y="201" style="font-size:13px">Same name, address, phone</text>
+        </g>
+        <g class="a-rise" style="animation-delay:.8s">
+          <rect x="470" y="268" width="220" height="72" rx="12" fill="var(--panel)" stroke="var(--line)" stroke-width="2"/>
+          <text x="486" y="296" class="t-lab t-fg" style="font-size:15px">Your Google listing</text>
+          <text x="486" y="318" style="font-size:13px">Posts, photos, 5.0 rating</text>
+        </g>
+        <!-- answer -->
+        <g class="a-pop" style="animation-delay:1.1s">
+          <rect x="770" y="140" width="180" height="94" rx="14" fill="var(--panel)" stroke="var(--blue)" stroke-width="3"/>
+          <circle cx="796" cy="170" r="15" fill="var(--blue)"/>
+          <text x="796" y="175" text-anchor="middle" class="t-lab" style="fill:#fff;font-size:13px">#1</text>
+          <text x="818" y="166" class="t-lab t-fg" style="font-size:14px">Commonwealth</text>
+          <text x="818" y="184" class="t-lab t-fg" style="font-size:14px">Eye Surgery</text>
+          <text x="786" y="214" style="font-size:12px">Dr. Piracha, Dr. Wörtz</text>
+          <text x="860" y="260" text-anchor="middle" style="font-size:13px">ChatGPT names you</text>
+        </g>
+      </svg></div>
+      <svg class="chart diag-m" viewBox="0 0 360 640" role="img" aria-label="A patient asks ChatGPT for an EVO ICL surgeon in Louisville. ChatGPT checks your website, directory listings and Google listing, then names Commonwealth Eye Surgery first.">
+        <path d="M180 74 V122" class="flow" stroke="var(--blue)" stroke-width="3" fill="none"/>
+        <path d="M180 206 V250" class="flow" stroke="var(--blue)" stroke-width="3" fill="none"/>
+        <path d="M180 470 V520" class="flow" stroke="var(--blue)" stroke-width="3" fill="none"/>
+        <g class="a-rise"><rect x="60" y="10" width="240" height="64" rx="18" fill="var(--blue)"/><text x="180" y="47" text-anchor="middle" class="t-lab" style="fill:#fff;font-size:16px">"evo icl surgeon louisville ky"</text></g>
+        <g class="a-pop" style="animation-delay:.3s"><circle cx="180" cy="164" r="40" fill="var(--fg)"/><circle cx="180" cy="164" r="50" fill="none" stroke="var(--fg)" stroke-opacity=".2" stroke-width="2" class="pulse"/><text x="180" y="171" text-anchor="middle" class="t-lab" style="fill:#fff;font-size:18px">AI</text><text x="236" y="150" style="font-size:14px">searches</text><text x="236" y="170" style="font-size:14px">and checks</text></g>
+        <g class="a-rise" style="animation-delay:.5s"><rect x="40" y="250" width="280" height="64" rx="12" fill="var(--panel)" stroke="var(--line)" stroke-width="2"/><text x="58" y="277" class="t-lab t-fg" style="font-size:16px">Your website</text><text x="58" y="300" style="font-size:14px">Louisville, EVO ICL and bio pages</text></g>
+        <g class="a-rise" style="animation-delay:.65s"><rect x="40" y="328" width="280" height="64" rx="12" fill="var(--panel)" stroke="var(--line)" stroke-width="2"/><text x="58" y="355" class="t-lab t-fg" style="font-size:16px">13 directory listings</text><text x="58" y="378" style="font-size:14px">Same name, address, phone</text></g>
+        <g class="a-rise" style="animation-delay:.8s"><rect x="40" y="406" width="280" height="64" rx="12" fill="var(--panel)" stroke="var(--line)" stroke-width="2"/><text x="58" y="433" class="t-lab t-fg" style="font-size:16px">Your Google listing</text><text x="58" y="456" style="font-size:14px">Posts, photos, 5.0 rating</text></g>
+        <g class="a-pop" style="animation-delay:1.1s"><rect x="40" y="520" width="280" height="96" rx="14" fill="var(--panel)" stroke="var(--blue)" stroke-width="3"/><circle cx="74" cy="556" r="18" fill="var(--blue)"/><text x="74" y="562" text-anchor="middle" class="t-lab" style="fill:#fff;font-size:15px">#1</text><text x="104" y="552" class="t-lab t-fg" style="font-size:17px">Commonwealth</text><text x="104" y="574" class="t-lab t-fg" style="font-size:17px">Eye Surgery</text><text x="104" y="600" style="font-size:14px">ChatGPT names you first</text></g>
+      </svg>
     </div>
-    <div class="callout">ChatGPT's own words on EVO ICL: it recommends Commonwealth because the practice lists its EVO ICL surgeons for Louisville patients. That is the Louisville page we published on October 28.</div>
+
+    <div class="callout">ChatGPT's own words on EVO ICL: it recommends Commonwealth because the practice lists its EVO ICL surgeons for Louisville patients. That is the Louisville page we published on October 28.
+    </div>
+    <div class="grid3">
+      <div class="xcard" data-anim>
+        <svg viewBox="0 0 120 90" aria-hidden="true"><rect x="30" y="8" width="56" height="72" rx="6" fill="var(--panel)" stroke="var(--fg)" stroke-width="3"/><path d="M40 26 H76 M40 38 H70 M40 50 H74" stroke="var(--ghost)" stroke-width="4" stroke-linecap="round"/><g class="drop"><path d="M86 6 C76 6 70 14 70 22 C70 34 86 48 86 48 C86 48 102 34 102 22 C102 14 96 6 86 6Z" fill="var(--blue)"/><circle cx="86" cy="22" r="6" fill="#fff"/></g></svg>
+        <b>A real Louisville office page</b>
+        <p>Published October 28 with the address, phone, surgeons and procedures in one place.</p>
+        <p class="why"><span>Why it helps</span> AI needs one page that says who, where and what. ChatGPT now recommends you for EVO ICL because this page names the surgeons.</p>
+      </div>
+      <div class="xcard" data-anim>
+        <svg viewBox="0 0 120 90" aria-hidden="true"><rect x="22" y="12" width="76" height="66" rx="8" fill="var(--panel)" stroke="var(--fg)" stroke-width="3"/><circle cx="48" cy="38" r="11" fill="var(--ghost)"/><path d="M32 66 C34 54 62 54 64 66" fill="var(--ghost)"/><path d="M70 34 H88 M70 46 H84" stroke="var(--ghost)" stroke-width="4" stroke-linecap="round"/><g class="pop-loop"><circle cx="92" cy="18" r="13" fill="var(--blue)"/><path d="M86 18 L91 23 L99 13" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
+        <b>Doctor bio pages</b>
+        <p>Rewritten and approved for Dr. Piracha, Dr. Wörtz and Dr. Kuc, with details search engines can read.</p>
+        <p class="why"><span>Why it helps</span> AI names surgeons, not just practices. Both surgeons now appear by name in the EVO ICL, PRK and lens exchange answers above.</p>
+      </div>
+      <div class="xcard" data-anim>
+        <svg viewBox="0 0 120 90" aria-hidden="true"><g class="fade1"><rect x="10" y="20" width="26" height="34" rx="3" fill="var(--panel)" stroke="var(--ghost)" stroke-width="2.5"/></g><g class="fade2"><rect x="22" y="34" width="26" height="34" rx="3" fill="var(--panel)" stroke="var(--ghost)" stroke-width="2.5"/></g><path d="M54 46 H66" stroke="var(--muted)" stroke-width="3" stroke-linecap="round"/><path d="M62 40 L68 46 L62 52" fill="none" stroke="var(--muted)" stroke-width="3" stroke-linecap="round"/><rect x="74" y="8" width="38" height="74" rx="5" fill="var(--panel)" stroke="var(--blue)" stroke-width="3"/><path d="M82 22 H104 M82 32 H104 M82 42 H100 M82 52 H104 M82 62 H96" stroke="var(--blue)" stroke-width="3" stroke-linecap="round"/></svg>
+        <b>Outdated posts retired</b>
+        <p>Old, thin posts were retired and redirected on October 15, with your approval.</p>
+        <p class="why"><span>Why it helps</span> Google's core updates push down sites full of thin pages. Fewer weak pages and more in-depth ones is how a site recovers.</p>
+      </div>
+      <div class="xcard" data-anim>
+        <svg viewBox="0 0 120 90" aria-hidden="true"><g class="link-l"><rect x="14" y="34" width="44" height="22" rx="11" fill="none" stroke="var(--fg)" stroke-width="5"/></g><g class="link-r"><rect x="62" y="34" width="44" height="22" rx="11" fill="none" stroke="var(--blue)" stroke-width="5"/></g><text x="60" y="84" text-anchor="middle" class="t-lab t-blue" style="font-size:15px">104 fixed</text></svg>
+        <b>104 broken links fixed</b>
+        <p>Plus a security warning removed from the doctor pages and Request Appointment buttons by October 16.</p>
+        <p class="why"><span>Why it helps</span> Dead ends and warnings stop Google and AI from reading a site fully. A clean site gets read, ranked and quoted.</p>
+      </div>
+      <div class="xcard" data-anim>
+        <svg viewBox="0 0 120 90" aria-hidden="true"><g stroke="var(--blue)" stroke-width="2.5"><path class="spoke" d="M60 45 L20 16"/><path class="spoke" d="M60 45 L100 16" style="animation-delay:.15s"/><path class="spoke" d="M60 45 L14 60" style="animation-delay:.3s"/><path class="spoke" d="M60 45 L106 60" style="animation-delay:.45s"/><path class="spoke" d="M60 45 L40 84" style="animation-delay:.6s"/><path class="spoke" d="M60 45 L80 84" style="animation-delay:.75s"/></g><g fill="var(--panel)" stroke="var(--fg)" stroke-width="2.5"><circle cx="20" cy="16" r="7"/><circle cx="100" cy="16" r="7"/><circle cx="14" cy="60" r="7"/><circle cx="106" cy="60" r="7"/><circle cx="40" cy="84" r="5"/><circle cx="80" cy="84" r="5"/></g><circle cx="60" cy="45" r="14" fill="var(--blue)"/></svg>
+        <b>13 directory listings live</b>
+        <p>Including Yellow Pages, MyVisionCare, LasikIndex and LASIK Centers Map.</p>
+        <p class="why"><span>Why it helps</span> Before AI recommends a practice, it cross-checks that the same name, address and phone show up across trusted sites.</p>
+      </div>
+      <div class="xcard" data-anim>
+        <svg viewBox="0 0 120 90" aria-hidden="true"><g class="card3"><rect x="34" y="50" width="56" height="30" rx="5" fill="var(--ghost)"/></g><g class="card2"><rect x="30" y="30" width="60" height="32" rx="5" fill="var(--panel)" stroke="var(--fg)" stroke-width="2.5"/></g><g class="card1"><rect x="26" y="8" width="64" height="34" rx="5" fill="var(--blue)"/><path d="M34 20 H70 M34 30 H60" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/></g><text x="104" y="30" text-anchor="middle" class="t-lab t-fg" style="font-size:16px">20+</text></svg>
+        <b>20+ Google posts, 11 photos, 6 review replies</b>
+        <p>On LASIK, PRK, EVO ICL, lens exchange and cataract surgery, each approved by you.</p>
+        <p class="why"><span>Why it helps</span> ChatGPT pulls your Google listing straight into its answers: the 5.0 rating, the photos and the map pin.</p>
+      </div>
+    </div>
   </div>
 </section>
+
 
 <section class="band alt" id="next">
   <div class="wrap">
