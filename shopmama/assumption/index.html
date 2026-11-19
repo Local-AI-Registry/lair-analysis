@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Mama Sol 12-Month DTC Forecast</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#24203a;--muted:#6b6780;--line:#e6e2ee;--paper:#fbfaf7;--violet:#5a4a8a;--violet-soft:#ece8f6;--gold:#b08d4c;--green:#2f7d5b;--red:#c0392b;--c-hist:#9a93b3;--c-base:#cfcadb;--c-ads:#5a4a8a;--c-seo:#8f7fc0;--c-pr:#b08d4c;--c-rep:#2f7d5b}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:15px;line-height:1.55;color-scheme:light}
+.wrap{max-width:1180px;margin:0 auto;padding:40px 20px 64px}
+h1,h2{text-wrap:balance}
+p,li,.note,.lbl{text-wrap:pretty}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600}
+h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(32px,5vw,48px);line-height:1.08;margin:8px 0 12px}
+.lede{font-size:17px;max-width:760px;margin:0}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;margin:28px 0 14px}
+.seg{display:inline-flex;flex-wrap:wrap;background:var(--violet-soft);border-radius:999px;padding:4px;gap:4px}
+.seg button{border:0;background:transparent;font:inherit;font-weight:500;font-size:14px;padding:7px 16px;border-radius:999px;color:var(--violet);cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--violet);color:#fff}
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:12px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.sw{width:11px;height:11px;border-radius:3px;display:inline-block}
+.dash{width:18px;border-top:2px dashed #8a85a0;display:inline-block}
+.spendln{width:18px;border-top:2px solid var(--ink);display:inline-block}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.chart{position:relative;min-width:900px}
+.chart svg{display:block;width:100%;height:auto}
+.chart text{font-family:Inter,sans-serif;font-size:11px;fill:var(--muted)}
+.tip{position:absolute;pointer-events:none;background:#fff;border:1px solid var(--line);box-shadow:0 6px 20px rgba(36,32,58,.12);border-radius:8px;padding:8px 10px;font-size:12px;white-space:nowrap;z-index:3}
+.tip b{display:block;margin-bottom:2px}
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:16px}
+.nums .lbl{font-size:12px;color:var(--muted)}
+.nums .big{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;line-height:1.1;margin:4px 0;font-variant-numeric:tabular-nums}
+.nums .note{font-size:12px;color:var(--muted)}
+.pos{color:var(--green)}.neg{color:var(--red)}
+.spend{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:16px}
+.spend .lbl{font-size:12px;color:var(--muted)}
+.spend .big{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600}
+details{margin-top:24px;font-size:13px;color:var(--muted)}
+details summary{cursor:pointer;font-weight:500;color:var(--violet)}
+details li{margin-bottom:6px}
+.foot{margin-top:28px;font-size:12px;color:var(--muted)}
+.foot a{color:var(--violet)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Mama Sol · Biological Suncare relaunch</div>
+  <h1>Online sales: where we were, the pause, and the relaunch</h1>
+  <p class="lede">Actual online sales through October 2026, the pause from October to December, and a forecast for the January relaunch, if the category launch lands.</p>
+  <p class="lede" style="margin-top:10px;font-size:14px;color:var(--muted);max-width:860px">Built on assumptions until we have real ad results. Each one is listed under <span style="white-space:nowrap">"How the forecast works."</span></p>
+
+  <div class="top">
+    <div class="legend">
+      <span><i class="sw" style="background:var(--c-hist)"></i>Actual sales</span>
+      <span><i class="sw" style="background:var(--c-base)"></i>Sales without new spend</span>
+      <span><i class="sw" style="background:var(--c-ads)"></i>Paid media</span>
+      <span><i class="sw" style="background:var(--c-seo)"></i>SEO</span>
+      <span><i class="sw" style="background:var(--c-pr)"></i>PR</span>
+      <span><i class="sw" style="background:var(--c-rep)"></i>Repeat customers</span>
+      <span><i class="dash"></i>Average before the pause</span>
+      <span><i class="spendln"></i>Monthly go-to-market budget</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="scroll"><div class="chart" id="chart"></div></div>
+  </div>
+
+  <div class="nums">
+    <div class="card"><div class="lbl">Average month before the pause</div><div class="big" id="n-before"></div><div class="note">Nov 2025 to Oct 2026</div></div>
+    <div class="card"><div class="lbl">Average month in 2027</div><div class="big" id="n-27"></div><div class="note" id="n-27n"></div></div>
+    <div class="card"><div class="lbl">Average month in 2028</div><div class="big" id="n-28"></div><div class="note" id="n-28n"></div></div>
+    <div class="card"><div class="lbl">Online revenue, 2027 and 2028</div><div class="big" id="n-net"></div><div class="note" id="n-net-n"></div></div>
+  </div>
+
+  <div class="card" style="margin-top:12px"><div class="lbl">60-day checkpoint</div><p style="margin:6px 0 0">This forecast assumes the Biological Suncare launch lands. By early March we'll know: if ads find new customers for under $50 and the launch press is converting, we scale into spring as shown. If not, we cut ad spend before peak season and reset the forecast.</p></div>
+
+  <div class="spend">
+    <div class="card"><div class="lbl">Paid media, by season</div><div class="big">$1,800 to $13,700</div><div class="lbl">Ads plus 20% management. Small tests in winter, most of the budget March to August, and growing a little each month.</div></div>
+    <div class="card"><div class="lbl">SEO</div><div class="big">$2,000/mo</div></div>
+    <div class="card"><div class="lbl">PR</div><div class="big">$2,500/mo</div></div>
+    <div class="card"><div class="lbl">Total budget per year</div><div class="big" id="n-spend"></div><div class="lbl" id="n-spend-n"></div></div>
+  </div>
+
+  <details>
+    <summary>How the forecast works</summary>
+    <ul>
+      <li>This forecast assumes the category launch lands: Dr. Rowen as the expert voice and the clinical studies and white paper in every ad and pitch.</li>
+      <li>Actual sales are Mama Sol's online sales from Shopify (Online Store, Shop app, Facebook and Instagram, subscriptions). Wholesale and events are not included.</li>
+      <li>November and December 2026 are estimates for the pause, based on the same months last year.</li>
+      <li>Sales without new spend follow 2026 by month, 25% lower because the old paid media is off. May's one-time spike is set to April's level.</li>
+      <li>The 2027 ad budget follows the season: $1,500 to $2,000 a month to test in winter, rising to $8,000 in June, then back down in fall. On top of that pattern, the budget grows about 2.5% a month as results prove out, so June 2028 is about 40% bigger than June 2027. Management adds 20%. SEO and PR stay at $2,000 and $2,500 a month.</li>
+      <li>Ads cost about $45 per new customer once running, better than the $39.31 Meta median for beauty only after costs settle. Meta ads haven't been tested for Mama Sol yet, and Google search ads aimed at new customers have cost $144 to $212 per order, so this is the number to check first. January and February cost about twice as much while a new account and site are tested, bigger budgets cost a little more per customer, and 2028 costs about 15% less as winning ads are known.</li>
+      <li>Average order is $65 at today's prices, from leading with duos and sets ($60 to $162).</li>
+      <li>About 3.5% of past customers reorder each month, helped by subscriptions and refill emails.</li>
+      <li>SEO brings no sales until June 2027, since a new site takes months to rank, then keeps climbing through 2028.</li>
+      <li>PR lands three features a year, each bringing about 70 orders over two months, plus a few orders a month from smaller mentions. May 8, 2026 (50 orders in one day) is the guide.</li>
+      <li>Seasonality follows US Google searches for "mineral sunscreen", which peak in June.</li>
+      <li>Revenue is online sales after discounts and returns, before tax and shipping. Not included: wholesale, the one-time website build, and product or shipping costs.</li>
+    </ul>
+  </details>
+
+  <p class="foot">Sources: Shopify Analytics for Mama Sol (Nov 18, 2026); Google Ads search volume via DataForSEO; <a href="https://triplewhale.com/blog/facebook-ads-benchmarks">Triple Whale Meta ads benchmarks</a>; <a href="https://shopmamasol.com/collections/all">shopmamasol.com prices</a>. A planning model, not a promise.</p>
+</div>
+
+<script>
+(function(){
+const HIST = [['2024-01',566],['2024-02',898],['2024-03',989],['2024-04',3061],['2024-05',2622],['2024-06',2372],['2024-07',926],['2024-08',1161],['2024-09',1401],['2024-10',1430],['2024-11',1092],['2024-12',779],['2025-01',852],['2025-02',966],['2025-03',3709],['2025-04',2091],['2025-05',2065],['2025-06',2488],['2025-07',1982],['2025-08',1534],['2025-09',793],['2025-10',1083],['2025-11',2330],['2025-12',1017],['2026-01',678],['2026-02',863],['2026-03',1685],['2026-04',2126],['2026-05',9077],['2026-06',4095],['2026-07',4574],['2026-08',2615],['2026-09',2410],['2026-10',1927]];
+const PAUSE_EST = [['2026-11',1310],['2026-12',1017]];
+const SEARCH = [60500,49500,90500,110000,135000,165000,135000,90500,33100,22200,33100,27100]; // Jan..Dec
+const MEAN = SEARCH.reduce((a,b)=>a+b,0)/12, SEASON = SEARCH.map(s=>s/MEAN);
+const BASE = [678,863,1685,2126,2500,4095,4574,2615,2410,1927,1310,1017].map(v=>Math.round(v*0.75)); // 2026 pattern, 25% lower with all old spend off
+const MEDIA_PLAN=[1500,2000,4000,6000,7000,8000,7000,5000,2500,1500,2000,2000]; // ad budget by month, Jan..Dec: test in winter, scale in sunscreen season
+const FEE_RATE=0.2, SEO=2000, PR=2500, BASELINE=4500;
+const spendFor=media=>media*(1+FEE_RATE)+SEO+PR;
+const AVG=Math.round(HIST.slice(-12).reduce((a,b)=>a+b[1],0)/12);
+const LEARN=[2,1.6,1.3,1.1];
+const P={cpa:45,aov:65,repeat:0.035,seoEnd:110,prHits:[2,4,6,14,16,18],prOrders:70,margin:0.65,y2:0.85};
+const GROWTH=0.025; // ad budget grows about 2.5% a month on top of the seasonal pattern, as results prove out
+function forecast(p){
+  const rows=[], coh=[]; let cum=0, newCust=0;
+  for(let m=0;m<24;m++){
+    const mi=m%12, yr=m<12?2027:2028;
+    const media=Math.round(MEDIA_PLAN[mi]*(1+GROWTH*m)/50)*50;
+    const cpa=p.cpa*(LEARN[m]||1)*(yr===2028?p.y2:1)*Math.pow(SEASON[mi],-0.35)*Math.pow(media/4000,0.15); // bigger budgets cost a bit more per customer
+    const ads=media/cpa;
+    const seo=m<5?0:p.seoEnd*(m-4)/19*Math.sqrt(SEASON[mi]);
+    let pr=m>=3?5:0; p.prHits.forEach(h=>{ if(m===h) pr+=p.prOrders*0.7; if(m===h+1) pr+=p.prOrders*0.3; });
+    let rep=0; coh.forEach((c,i)=>{ if(m-i>=2) rep+=c*p.repeat; });
+    coh.push(ads+seo+pr); newCust+=ads+seo+pr;
+    const r={month:yr+'-'+String(mi+1).padStart(2,'0'),year:yr,base:BASE[mi],ads:ads*p.aov,seo:seo*p.aov,pr:pr*p.aov,rep:rep*p.aov,cpa};
+    r.plan=r.ads+r.seo+r.pr+r.rep; r.total=r.base+r.plan;
+    r.advisory=0.05*Math.max(0,r.total-BASELINE);
+    r.spend=spendFor(media); r.media=media;
+    { let lo=0,hi=200000; for(let k=0;k<60;k++){const t=(lo+hi)/2, pl=t-r.base, n=pl*p.margin-r.spend-0.05*Math.max(0,t-BASELINE); if(n>=0) hi=t; else lo=t;} r.breakeven=hi; } r.net=r.plan*p.margin-r.spend-r.advisory; cum+=r.net; r.cum=cum; r.newCust=newCust;
+    rows.push(r);
+  }
+  return rows;
+}
+const $=id=>document.getElementById(id);
+const usd=v=>(v<0?'-$':'$')+Math.abs(Math.round(v)).toLocaleString('en-US');
+const usdK=v=>Math.abs(v)>=1000?(v<0?'-$':'$')+(Math.abs(v)/1000).toFixed(1).replace('.0','')+'k':usd(v);
+const lab=m=>new Date(m+'-15T12:00:00Z').toLocaleString('en-US',{month:'short',year:'numeric',timeZone:'UTC'});
+function svgEl(t,a,p){const e=document.createElementNS('http://www.w3.org/2000/svg',t);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e;}
+function render(){
+  const fc=forecast(P);
+  const bars=[...HIST.map(([m,v])=>({m,kind:'hist',v})),...PAUSE_EST.map(([m,v])=>({m,kind:'pause',v})),...fc.map(r=>({m:r.month,kind:'fc',r,v:r.total}))];
+  const host=$('chart'); host.replaceChildren();
+  const W=Math.max(900,host.clientWidth), H=Math.round(Math.min(520,Math.max(380,W*0.42))), mg={t:46,r:12,b:34,l:52};
+  const svg=svgEl('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':'Monthly online sales from January 2024 to October 2026, a pause from October to December 2026, and the 2027 relaunch forecast by source'});
+  host.appendChild(svg);
+  const max=Math.ceil(Math.max(...bars.map(b=>b.v),...fc.map(r=>r.spend))*1.08/5000)*5000;
+  const iw=W-mg.l-mg.r, ih=H-mg.t-mg.b, bw=iw/bars.length, y=v=>mg.t+ih-v/max*ih, x=i=>mg.l+i*bw;
+  // zones
+  const iPause=bars.findIndex(b=>b.m==='2026-10'), iFc=bars.findIndex(b=>b.kind==='fc');
+  svgEl('rect',{x:x(iPause),y:mg.t-30,width:(iFc-iPause)*bw,height:ih+30,fill:'#f3f1f6'},svg);
+  svgEl('rect',{x:x(iFc),y:mg.t-30,width:(bars.length-iFc)*bw,height:ih+30,fill:'#f6f3fb'},svg);
+  const t1=svgEl('text',{x:x(iPause)+(iFc-iPause)*bw/2,y:mg.t-14,'text-anchor':'middle',style:'font-weight:600;fill:#6b6780'},svg); t1.textContent='Pause';
+  const t2=svgEl('text',{x:x(iFc)+8,y:mg.t-14,style:'font-weight:600;fill:#5a4a8a'},svg); t2.textContent='Relaunch, January 2027 onward';
+  const t2b=svgEl('text',{x:x(iFc)+8,y:mg.t-2},svg); t2b.textContent='New category, site, PR, paid media and SEO';
+  const t3=svgEl('text',{x:mg.l+4,y:mg.t-14,style:'font-weight:600'},svg); t3.textContent='Actual';
+  // grid
+  for(let v=0;v<=max;v+=max/5){svgEl('line',{x1:mg.l,x2:W-mg.r,y1:y(v),y2:y(v),stroke:'#ece9f2'},svg);const tx=svgEl('text',{x:mg.l-8,y:y(v)+4,'text-anchor':'end'},svg);tx.textContent=usdK(v);}
+  // bars
+  const keys=[['base','--c-base'],['ads','--c-ads'],['seo','--c-seo'],['pr','--c-pr'],['rep','--c-rep']];
+  bars.forEach((b,i)=>{
+    const bx=x(i)+bw*0.15, w=bw*0.7;
+    if(b.kind==='fc'){let acc=0;keys.forEach(([k,c])=>{const v=b.r[k];svgEl('rect',{x:bx,width:w,y:y(acc+v),height:Math.max(0,y(acc)-y(acc+v)),fill:`var(${c})`},svg);acc+=v;});}
+    else svgEl('rect',{x:bx,width:w,y:y(b.v),height:y(0)-y(b.v),fill:'var(--c-hist)',opacity:b.kind==='pause'?0.45:1,'stroke-dasharray':b.kind==='pause'?'3 2':'',stroke:b.kind==='pause'?'#6b6780':'none'},svg);
+    if(b.m.endsWith('-01')||i===0){const tx=svgEl('text',{x:x(i)+bw/2,y:H-12,'text-anchor':'start'},svg);tx.textContent=b.m.slice(0,4);svgEl('line',{x1:x(i),x2:x(i),y1:y(0),y2:y(0)+6,stroke:'#9a96ab'},svg);}
+  });
+  // baseline
+  svgEl('line',{x1:mg.l,x2:W-mg.r,y1:y(AVG),y2:y(AVG),stroke:'#8a85a0','stroke-width':2,'stroke-dasharray':'6 4'},svg);
+  let sp='';fc.forEach((r,j)=>{const i=iFc+j;sp+=(j?'L':'M')+x(i)+' '+y(r.spend)+' L'+(x(i)+bw)+' '+y(r.spend)+' ';});
+  svgEl('path',{d:sp,fill:'none',stroke:'var(--ink)','stroke-width':2},svg);
+  const pk=fc.slice(0,12).reduce((a,r,j)=>r.spend>fc[a].spend?j:a,0);
+  const sl=svgEl('text',{x:x(iFc+pk)+bw/2,y:y(fc[pk].spend)-8,'text-anchor':'middle',style:'fill:var(--ink);font-weight:600','paint-order':'stroke',stroke:'#fff','stroke-width':3},svg); sl.textContent='Monthly budget';
+  const bl=svgEl('text',{x:mg.l+4,y:y(AVG)-6,style:'fill:#6b6780;font-weight:600','paint-order':'stroke',stroke:'#fff','stroke-width':3},svg); bl.textContent='Average before the pause: '+usd(AVG)+'/mo';
+  // tooltip
+  let tip=document.createElement('div'); tip.className='tip'; tip.hidden=true; host.appendChild(tip);
+  bars.forEach((b,i)=>{const h=svgEl('rect',{x:x(i),y:mg.t,width:bw,height:ih,fill:'transparent'},svg);
+    h.addEventListener('mousemove',ev=>{
+      const lines=b.kind==='fc'?[lab(b.m)+' forecast: '+usd(b.r.total),'Without new spend: '+usd(b.r.base),'Paid media: '+usd(b.r.ads),'SEO: '+usd(b.r.seo),'PR: '+usd(b.r.pr),'Repeat customers: '+usd(b.r.rep),'Budget this month: '+usd(b.r.spend)]:[lab(b.m)+(b.kind==='pause'?' (estimate)':''),'Online sales: '+usd(b.v)];
+      tip.replaceChildren(); lines.forEach((l,j)=>{const d=document.createElement(j?'div':'b');d.textContent=l;tip.appendChild(d);});
+      tip.hidden=false; const r=host.getBoundingClientRect(); let px=ev.clientX-r.left+14; if(px+tip.offsetWidth>r.width) px=ev.clientX-r.left-tip.offsetWidth-14;
+      tip.style.left=Math.max(0,px)+'px'; tip.style.top=(ev.clientY-r.top+10)+'px';});
+    h.addEventListener('mouseleave',()=>tip.hidden=true);});
+  // numbers
+  const y27=fc.filter(r=>r.year===2027), y28=fc.filter(r=>r.year===2028);
+  const avg=a=>a.reduce((s,r)=>s+r.total,0)/a.length, sum=(a,k)=>a.reduce((s,r)=>s+r[k],0);
+  const before=HIST.slice(-12).reduce((a,b)=>a+b[1],0)/12;
+  $('n-before').textContent=usd(before);
+  $('n-27').textContent=usd(avg(y27)); $('n-27n').textContent=(avg(y27)/before).toFixed(1)+'x the year before the pause';
+  $('n-28').textContent=usd(avg(y28)); $('n-28n').textContent=(avg(y28)/before).toFixed(1)+'x the year before the pause';
+  const sp27=sum(y27,'spend'), sp28=sum(y28,'spend'); $('n-spend').textContent=usdK(sp27)+' → '+usdK(sp28); $('n-spend-n').textContent='2027 to 2028. About '+usd(sp27/12)+' a month on average in 2027, rising to '+usd(sp28/12)+' in 2028';
+  const r27=sum(y27,'total'), r28=sum(y28,'total');
+  $('n-net').textContent=usdK(r27+r28); $('n-net').className='big';
+  $('n-net-n').textContent='Revenue on '+usdK(sp27+sp28)+' of budget. 2027: '+usdK(r27)+' on '+usdK(sp27)+'. 2028: '+usdK(r28)+' on '+usdK(sp28)+'.';
+}
+let rt; window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(render,150);});
+render();
+})();
+</script>
+</body>
+</html>
