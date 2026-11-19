@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Commonwealth Eye Surgery: Lexington and Louisville, November 2026</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#F4F1EA; --band:#ECE6D6; --panel:#FFFDF8; --fg:#0B1A2E; --muted:#4D5A6E; --line:rgba(11,26,46,.14);
+  --blue:#1F4FE0; --blue-soft:rgba(31,79,224,.12); --ghost:#C9CFDA; --teal:#2E7D6B; --teal-soft:rgba(46,125,107,.13);
+  --f-display:"Cormorant",Georgia,serif; --f-label:"Bricolage Grotesque",Arial,sans-serif; --f-text:"Hanken Grotesk",Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg)}
+body{font-family:var(--f-text);font-size:19px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.band{padding:88px 20px}
+.band.alt{background:var(--band)}
+.wrap{max-width:1080px;margin:0 auto;display:grid;gap:40px}
+h1,h2,h3{font-family:var(--f-display);font-weight:500;line-height:1.08;margin:0;text-wrap:balance}
+h1{font-size:clamp(42px,7vw,82px);letter-spacing:-.01em}
+h1 em,h2 em{font-style:italic;color:var(--blue)}
+h2{font-size:clamp(36px,5.2vw,58px)}
+h3{font-size:clamp(26px,3.2vw,34px)}
+p{margin:0;max-width:64ch;text-wrap:pretty}
+.lede{font-size:clamp(20px,2.2vw,23px)}
+.muted{color:var(--muted)}
+.eyebrow{font-family:var(--f-label);font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.eyebrow.lex{color:var(--teal)}
+.num{font-family:var(--f-label);font-weight:800;font-variant-numeric:tabular-nums;line-height:1}
+.src{font-size:14px;color:var(--muted);max-width:none}
+.stack{display:grid;gap:18px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:28px;align-items:start}
+.grid2>*{min-width:0}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:28px}
+.nb{white-space:nowrap}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.top .logo svg{display:block;height:28px;width:auto}
+.meta{font-size:14px;color:var(--muted);text-align:right}
+/* two-office hero */
+.offices{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px}
+.office{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:28px;display:grid;gap:16px;align-content:start;border-top:6px solid var(--blue)}
+.office.lex{border-top-color:var(--teal)}
+.office .tag{font-family:var(--f-label);font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+.office .tag.lou{color:var(--blue)} .office .tag.lex{color:var(--teal)}
+.office h3{font-size:clamp(28px,3.4vw,38px)}
+.verdict{font-family:var(--f-label);font-weight:800;font-size:clamp(22px,2.6vw,28px);line-height:1.2;text-wrap:balance}
+/* before/after bars */
+.vs{display:grid;gap:12px}
+.vs-row{display:grid;grid-template-columns:96px 1fr;gap:12px;align-items:center}
+.vs-row .lbl{font-family:var(--f-label);font-weight:700;font-size:15px;color:var(--muted);line-height:1.2}
+.bar{height:42px;border-radius:6px;display:flex;align-items:center;padding:0 12px;font-family:var(--f-label);font-weight:800;font-size:17px;white-space:nowrap;min-width:max-content}
+.bar.old{background:var(--ghost);color:var(--fg)}
+.bar.new{background:var(--blue);color:#fff;justify-content:flex-end}
+.bar.new.lex{background:var(--teal)}
+.bar.zero{background:transparent;border:2px dashed var(--ghost);color:var(--muted)}
+.pair{display:grid;gap:22px}
+.pair .row{display:grid;gap:8px}
+.pair .bars{display:grid;gap:6px}
+.pair .b{display:grid;grid-template-columns:108px 1fr;gap:10px;align-items:center}
+.pair .b span{font-family:var(--f-label);font-weight:700;font-size:14px;color:var(--muted)}
+.pair .fill{height:34px;border-radius:5px;display:flex;align-items:center;justify-content:flex-end;padding:0 10px;font-family:var(--f-label);font-weight:800;font-size:16px;color:#fff;white-space:nowrap;min-width:max-content}
+.pair .fill.lex{background:var(--teal)} .pair .fill.lou{background:var(--blue)}
+.pair .b .rank.r1{color:#fff}.pair .b .rank.l2{color:var(--fg)}
+.pair .win{font-size:15px;color:var(--muted)}
+.metric-title{font-family:var(--f-label);font-weight:700;font-size:17px;line-height:1.3}
+/* tiles */
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:20px}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px;display:grid;gap:10px;align-content:start}
+.tile .num{font-size:clamp(36px,3.6vw,48px);color:var(--teal)}
+.tile .num.blue{color:var(--blue)}
+.tile p{font-size:17px}
+/* tables */
+.scroll-x{overflow-x:auto}
+.t{border-collapse:collapse;width:100%;min-width:640px;font-size:17px}
+.t th{font-family:var(--f-label);font-weight:700;font-size:13px;color:var(--muted);text-align:center;padding:10px 8px;letter-spacing:.05em;text-transform:uppercase;vertical-align:bottom;line-height:1.3}
+.t th:first-child{text-align:left}
+.t th.lou{color:var(--blue)} .t th.lex{color:var(--teal)}
+.t td{border-top:1px solid var(--line);padding:12px 8px;text-align:center;vertical-align:middle}
+.t td:first-child{text-align:left;font-weight:600}
+.t td.note{text-align:left;font-size:15px;color:var(--muted);font-weight:400}
+.rank{display:inline-grid;place-items:center;min-width:44px;height:44px;padding:0 10px;border-radius:22px;font-family:var(--f-label);font-weight:800;font-size:17px}
+.r1{background:var(--blue);color:#fff}
+.r2{background:var(--blue-soft);color:var(--fg);border:1px solid var(--blue)}
+.l1{background:var(--teal);color:#fff}
+.l2{background:var(--teal-soft);color:var(--fg);border:1px solid var(--teal)}
+.r0{color:var(--muted);font-family:var(--f-label);font-weight:700;font-size:15px;white-space:nowrap}
+.t td{text-wrap:balance}
+.new-chip{display:inline-block;font-family:var(--f-label);font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);border:1px solid var(--teal);border-radius:20px;padding:2px 8px;margin-left:6px;vertical-align:middle}
+.arrow{color:var(--muted)}
+.callout{border-left:4px solid var(--blue);padding:6px 0 6px 18px;font-size:20px}
+.callout.lex{border-left-color:var(--teal)}
+/* why */
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:20px}
+.why .panel{display:grid;gap:10px;align-content:start}
+.why b{font-family:var(--f-label);font-weight:700;font-size:19px;line-height:1.3}
+.legend{display:flex;gap:20px;flex-wrap:wrap;font-size:15px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.sw{width:14px;height:14px;border-radius:3px;display:inline-block}
+footer{font-size:14px;color:var(--muted)}
+@media (max-width:560px){
+  body{font-size:18px}
+  .band{padding:60px 16px}
+  .panel,.office{padding:20px}
+  .vs-row{grid-template-columns:78px 1fr}
+  .meta{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<section class="band">
+  <div class="wrap">
+    <div class="top">
+      <div class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1867.45 232.87" role="img" aria-label="Local AI Registry">
+  <g transform="translate(0 22.54) scale(1.878)">
+    <path d="M50 10 L92 86 L64 86 L50 58 L36 86 L8 86 Z" fill="#0B1A2E"></path>
+    <path d="M50 10 L61 30 L39 30 Z" fill="#0B1A2E"></path>
+  </g>
+  <path transform="translate(237.85 173.34)" d="M46 0L13.800 0L13.800-132L46-132L46 0ZM99.800 0L19.600 0L19.600-27L99.800-27L99.800 0ZM162.800 2.800L162.800 2.800Q146.800 2.800 134.500-3.400Q122.200-9.600 115.200-22Q108.200-34.400 108.200-53L108.200-53Q108.200-71.600 115.200-83.900Q122.200-96.200 134.600-102.300Q147-108.400 163-108.400L163-108.400Q179-108.400 191.400-102.200Q203.800-96 210.800-83.700Q217.800-71.400 217.800-52.800L217.800-52.800Q217.800-33.800 210.600-21.400Q203.400-9 190.900-3.100Q178.400 2.800 162.800 2.800ZM163.800-20.600L163.800-20.600Q171-20.600 175.800-23.900Q180.600-27.200 183-34Q185.400-40.800 185.400-50.800L185.400-50.800Q185.400-61.400 182.800-68.700Q180.200-76 175.100-79.900Q170-83.800 162-83.800L162-83.800Q155.200-83.800 150.300-80.500Q145.400-77.200 143-70.400Q140.600-63.600 140.600-53.400L140.600-53.400Q140.600-37 146.700-28.800Q152.800-20.600 163.800-20.600ZM286.400 2.800L286.400 2.800Q272.800 2.800 262.400-1Q252.000-4.800 245.000-11.900Q238.000-19 234.300-29Q230.600-39 230.600-51.400L230.600-51.400Q230.600-64.200 234.300-74.600Q238.000-85 245.000-92.600Q252.000-100.200 262.200-104.300Q272.400-108.400 285.600-108.400L285.600-108.400Q298.800-108.400 308.400-104.200Q318-100 324.100-92.400Q330.200-84.800 332.400-74.800L332.400-74.800L302.600-64.800Q302-71.400 299.400-75.600Q296.800-79.800 292.700-81.700Q288.600-83.600 283.800-83.600L283.800-83.600Q278.800-83.600 275-81.600Q271.200-79.600 268.600-75.600Q266-71.600 264.600-65.900Q263.200-60.200 263.200-52.800L263.200-52.800Q263.200-42.200 265.900-35.100Q268.600-28 273.900-24.400Q279.200-20.800 286.800-20.800L286.800-20.800Q294.600-20.800 299-24Q303.400-27.200 305.400-31.900Q307.400-36.600 307.800-41.200L307.800-41.200L335.800-35Q335-27.600 331.900-20.700Q328.800-13.800 322.800-8.500Q316.800-3.200 307.900-0.200Q299 2.800 286.400 2.800ZM375.600 2.800L375.600 2.800Q366.800 2.800 360.000-0.700Q353.200-4.200 349.400-10.900Q345.600-17.600 345.600-27.200L345.600-27.200Q345.600-36.200 349.100-42.100Q352.600-48 359.300-51.500Q366.000-55 375.400-57.300Q384.800-59.600 396.800-61.400L396.800-61.400Q402.600-62.400 406.500-63.300Q410.400-64.200 412.400-66.200Q414.400-68.200 414.400-72L414.400-72Q414.400-77 410.800-80.600Q407.200-84.200 399.200-84.200L399.200-84.200Q393.600-84.200 389.100-82.200Q384.600-80.200 381.400-76.400Q378.200-72.600 376.600-67.200L376.600-67.200L348.200-75.600Q350.800-84 355.500-90.200Q360.200-96.400 366.800-100.500Q373.400-104.600 381.900-106.500Q390.400-108.400 400.000-108.400L400.000-108.400Q416.000-108.400 426.100-103.300Q436.200-98.200 441.100-87.500Q446.000-76.800 446.000-60L446.000-60L446.000-43.800Q446.000-36.600 446.300-29.300Q446.600-22 447.100-14.700Q447.600-7.400 448.400 0L448.400 0L420.000 0Q419.200-4.600 418.400-11.100Q417.600-17.600 417.200-24.400L417.200-24.400L413.400-24.400Q410.600-16.800 405.300-10.500Q400.000-4.200 392.500-0.700Q385.000 2.800 375.600 2.800ZM390.200-20L390.200-20Q393.800-20 397.500-21.300Q401.200-22.600 404.600-24.900Q408.000-27.200 410.800-30.600Q413.600-34 415.000-38L415.000-38L414.600-53.800L419.000-52.800Q415.200-50.400 410.600-49Q406.000-47.600 401.300-46.800Q396.600-46 392.100-45.100Q387.600-44.200 384.100-42.800Q380.600-41.400 378.600-39Q376.600-36.600 376.600-32.400L376.600-32.400Q376.600-26.800 380.400-23.400Q384.200-20 390.200-20ZM501.400 0L469.800 0L469.800-144L501.400-144L501.400 0ZM596.600 0L561.400 0L606.200-132L653.400-132L698.200 0L663 0L631.400-106.800L628.200-106.800L596.600 0ZM676.400-24.800L588-24.800L588-46.400L676.400-46.400L676.400-24.800ZM747.600 0L714.800 0L714.800-132L747.600-132L747.600 0ZM852.200 0L820 0L820-132L876.200-132Q887.200-132 896.200-130.300Q905.200-128.600 912.100-125.300Q919-122 923.800-117.300Q928.600-112.600 931-106.500Q933.400-100.400 933.400-93L933.400-93Q933.400-86 931.200-80.400Q929-74.800 924.500-70.600Q920-66.400 913.200-63.800Q906.400-61.200 897.400-60L897.400-60L897.400-57Q908.800-55.800 915.100-51.900Q921.400-48 924.800-41.600Q928.200-35.200 930.800-26.200L930.800-26.200L938.400 0L902.600 0L896.800-24.200Q895-32.200 891.900-36.600Q888.800-41 884-42.700Q879.200-44.400 872-44.400L872-44.400L852.200-44.400L852.200 0ZM852.200-107.600L852.200-68.200L874-68.200Q886.200-68.200 893-73Q899.800-77.800 899.800-88L899.800-88Q899.800-98 893.600-102.800Q887.400-107.600 874.800-107.600L874.800-107.600L852.200-107.600ZM1006.400 2.800L1006.400 2.800Q993.200 2.800 982.800-0.700Q972.400-4.200 965.100-11Q957.800-17.800 954.000-27.800Q950.200-37.800 950.200-50.800L950.200-50.800Q950.200-63.400 953.900-74Q957.600-84.600 964.500-92.300Q971.400-100 981.500-104.200Q991.600-108.400 1004.200-108.400L1004.200-108.400Q1017.000-108.400 1026.700-104.300Q1036.400-100.200 1042.700-92.200Q1049-84.200 1052-72.700Q1055-61.200 1054-46.400L1054-46.400L971.400-45.800L971.400-62.600L1035.600-63.200L1024.200-55.400Q1025.600-65.400 1023.000-71.700Q1020.400-78 1015.400-80.900Q1010.400-83.800 1004.600-83.800L1004.600-83.800Q997.600-83.800 992.300-80Q987.000-76.200 984.000-69Q981.000-61.800 981.000-51.400L981.000-51.400Q981.000-35 988.100-27.600Q995.200-20.200 1006.200-20.200L1006.200-20.200Q1011.600-20.200 1015.200-21.700Q1018.800-23.200 1021.100-25.500Q1023.400-27.800 1024.700-30.600Q1026-33.400 1026.800-36L1026.800-36L1054.800-30Q1053.200-22.600 1049.700-16.600Q1046.200-10.600 1040.300-6.200Q1034.400-1.800 1026.100 0.500Q1017.800 2.800 1006.400 2.800ZM1116.200 37L1116.200 37Q1098.600 37 1087.300 34.300Q1076 31.600 1070.800 26.300Q1065.600 21 1065.600 13.400L1065.600 13.400Q1065.600 4.200 1072.900-1.600Q1080.200-7.400 1094.400-8.200L1094.400-8.200L1094.400-12.400Q1083.400-12.400 1077.500-14.600Q1071.600-16.800 1071.600-22.800L1071.600-22.800Q1071.600-28.400 1077.400-33Q1083.200-37.600 1096.600-40.200L1096.600-40.200L1096.600-44.400Q1084.400-45.400 1077.200-52.500Q1070-59.600 1070-71.200L1070-71.200Q1070-81 1075.600-89.100Q1081.200-97.200 1092.400-102.100Q1103.600-107 1120.400-107L1120.400-107L1175.200-107L1175.200-82.800L1141.800-87.200L1141.800-82.400Q1154.800-80.600 1160.400-76.400Q1166-72.200 1166-64.600L1166-64.600Q1166-56.600 1160.500-50.400Q1155-44.200 1145-40.700Q1135-37.200 1121.200-37.200L1121.200-37.200Q1118.800-37.200 1115.900-37.400Q1113-37.600 1105.200-38.400L1105.200-38.400Q1102-35.600 1100.200-33.700Q1098.400-31.800 1098.400-30.200L1098.400-30.200Q1098.400-29 1099.400-28.200Q1100.400-27.400 1102.300-27.100Q1104.200-26.800 1106.400-26.800L1106.400-26.800L1138.600-26.800Q1142.600-26.800 1149.100-26.300Q1155.600-25.800 1162.100-23.200Q1168.600-20.600 1173.100-14.800Q1177.600-9 1177.600 1.800L1177.600 1.800Q1177.600 13.600 1171 21.500Q1164.400 29.400 1150.800 33.200Q1137.200 37 1116.200 37ZM1120.400 11.400L1120.400 11.400Q1132 11.400 1138.400 10.200Q1144.800 9 1147.300 6.400Q1149.800 3.800 1149.800 0L1149.800 0Q1149.800-3.600 1148.400-5.700Q1147-7.800 1144.800-8.600Q1142.600-9.400 1140.300-9.600Q1138-9.800 1136.400-9.800L1136.400-9.800L1110.600-9.800Q1103.200-9.800 1099.700-6.300Q1096.200-2.800 1096.200 1.800L1096.200 1.800Q1096.200 5.600 1098.600 7.700Q1101 9.800 1106.300 10.600Q1111.600 11.400 1120.400 11.400ZM1119-53.200L1119-53.200Q1127.600-53.200 1131.900-57.800Q1136.200-62.400 1136.200-69.400L1136.200-69.400Q1136.200-77 1131.800-81.900Q1127.400-86.800 1119.200-86.800L1119.200-86.800Q1111-86.800 1106.400-81.900Q1101.800-77 1101.800-69.400L1101.800-69.400Q1101.800-64.800 1103.800-61.100Q1105.800-57.400 1109.600-55.300Q1113.400-53.200 1119-53.200ZM1227.200 0L1195.000 0L1195.000-105.600L1227.200-105.600L1227.200 0ZM1211.200-120.400L1211.200-120.400Q1202.000-120.400 1197.100-124.300Q1192.200-128.200 1192.200-135.400L1192.200-135.400Q1192.200-143 1197.100-146.900Q1202.000-150.800 1211.200-150.800L1211.200-150.800Q1220.600-150.800 1225.500-146.900Q1230.400-143 1230.400-135.600L1230.400-135.600Q1230.400-128.200 1225.500-124.300Q1220.600-120.400 1211.200-120.400ZM1295.400 2.800L1295.400 2.800Q1284.800 2.800 1276.200 0.900Q1267.600-1 1261.200-4.600Q1254.800-8.200 1250.700-13.300Q1246.600-18.400 1245.000-24.600L1245.000-24.600L1269.000-35.200Q1270.400-31.800 1273.900-28.300Q1277.400-24.800 1283.300-22.600Q1289.200-20.400 1297.600-20.400L1297.600-20.400Q1305.600-20.400 1310.100-22.700Q1314.600-25 1314.600-29.400L1314.600-29.400Q1314.600-32.600 1312.100-34.500Q1309.600-36.400 1304.600-37.900Q1299.600-39.400 1292.200-40.800L1292.200-40.800Q1284.600-42.400 1276.800-44.500Q1269.000-46.600 1262.200-50.300Q1255.400-54 1251.300-60.100Q1247.200-66.200 1247.200-75.600L1247.200-75.600Q1247.200-85.400 1252.400-92.700Q1257.600-100 1267.900-104.200Q1278.200-108.400 1293.000-108.400L1293.000-108.400Q1306.200-108.400 1316.200-105Q1326.200-101.600 1332.900-95.300Q1339.600-89 1342.200-80.200L1342.200-80.200L1316.400-71Q1315.400-75.400 1312.300-78.600Q1309.200-81.800 1304.500-83.500Q1299.800-85.200 1293.400-85.200L1293.400-85.200Q1285.600-85.200 1281.300-82.800Q1277.000-80.400 1277.000-76.400L1277.000-76.400Q1277.000-73.200 1279.900-71.100Q1282.800-69 1288.200-67.600Q1293.600-66.200 1301.000-64.600L1301.000-64.600Q1308.800-63 1316.500-60.900Q1324.200-58.800 1330.500-55.300Q1336.800-51.800 1340.500-46.100Q1344.200-40.400 1344.200-31.400L1344.200-31.400Q1344.200-20.800 1338.600-13.100Q1333.000-5.400 1322.100-1.300Q1311.200 2.800 1295.400 2.800ZM1403.200 2.600L1403.200 2.600Q1384.600 2.600 1375.800-7.300Q1367.000-17.200 1367.000-39L1367.000-39L1367.000-80.400L1352.000-80.400L1352.600-105.400L1363.400-105.400Q1369.800-105.600 1373.100-107.400Q1376.400-109.200 1377.200-114.200L1377.200-114.200L1379.800-129L1398.000-129L1398.000-105.600L1423.400-105.600L1423.400-79.400L1398.000-79.400L1398.000-40.400Q1398.000-33.600 1401.300-30.400Q1404.600-27.200 1411.400-27.200L1411.400-27.200Q1415.200-27.200 1418.600-28Q1422.000-28.800 1424.200-30.200L1424.200-30.200L1424.200-0.400Q1417.800 1.600 1412.500 2.100Q1407.200 2.600 1403.200 2.600ZM1475.600 0L1443.200 0L1443.200-49L1443.200-105.600L1469.600-105.600L1470.200-69.800L1474.200-69.800Q1475.600-83.800 1479.500-92.100Q1483.400-100.400 1490.700-104.200Q1498.000-108 1508.800-108L1508.800-108Q1510.400-108 1512.400-107.900Q1514.400-107.800 1517.000-107.400L1517.000-107.400L1515.800-73Q1512.600-74.600 1508.900-75.100Q1505.200-75.600 1502.400-75.600L1502.400-75.600Q1494.600-75.600 1488.900-72.600Q1483.200-69.600 1479.900-63.400Q1476.600-57.200 1475.600-47.800L1475.600-47.800L1475.600 0ZM1573.000 36.800L1573.000 36.800Q1565.000 36.800 1556.600 35.400Q1548.200 34 1540.700 31.300Q1533.200 28.600 1527.800 24.200L1527.800 24.200L1535.600-4.400Q1542.600 2.200 1552.500 5.400Q1562.400 8.600 1571.600 8.600L1571.600 8.600Q1582.200 8.600 1589.100 4.500Q1596.000 0.400 1599.700-8.100Q1603.400-16.600 1604.000-29.200L1604.000-29.200L1605.000-46.600L1600.200-46.600Q1598.400-33.600 1593.900-25.400Q1589.400-17.200 1582.500-13.300Q1575.600-9.400 1566.200-9.400L1566.200-9.400Q1554.600-9.400 1546.800-15.200Q1539.000-21 1535.100-32.700Q1531.200-44.400 1531.200-61.800L1531.200-61.800L1531.200-105.600L1563.600-105.600L1563.600-69.800Q1563.600-51.400 1567.300-43.500Q1571.000-35.600 1579.000-35.600L1579.000-35.600Q1583.200-35.600 1586.600-38Q1590.000-40.400 1592.400-44.800Q1594.800-49.200 1596.100-55.500Q1597.400-61.800 1597.400-69.600L1597.400-69.600L1597.400-105.600L1629.600-105.600L1629.600-28Q1629.600-15.400 1627.300-5Q1625.000 5.400 1620.500 13.200Q1616.000 21 1609.200 26.300Q1602.400 31.600 1593.400 34.200Q1584.400 36.800 1573.000 36.800Z" fill="#0B1A2E"></path>
+</svg></div>
+      <div class="meta">Prepared for Shawna Stocker<br>November 19, 2026, by Steve Lee</div>
+    </div>
+
+    <div class="stack">
+      <div class="eyebrow">Two offices, one website · September to November</div>
+      <h1>Our Louisville work is lifting <em>Lexington</em> too.</h1>
+      <p class="lede">You asked how Lexington is doing. Short answer: it is growing, and much of the growth runs through pages we built for the whole practice. Louisville is the office we work on directly, and it has moved further from where it started. Here is each office side by side, from the same sources.</p>
+    </div>
+
+    <div class="offices">
+      <div class="office lex">
+        <div class="tag lex">Lexington · main office</div>
+        <h3>Already strong, and getting stronger</h3>
+        <div class="vs">
+          <div class="metric-title">Lexington searches where your site is in Google's top 3</div>
+          <div class="vs-row"><div class="lbl">Sept 14</div><div class="bar old" style="width:69%">9</div></div>
+          <div class="vs-row"><div class="lbl">Nov 18</div><div class="bar new lex" style="width:100%">13</div></div>
+        </div>
+        <p class="verdict">More Lexington searches, on top of a lead you already had.</p>
+      </div>
+      <div class="office">
+        <div class="tag lou">Louisville · our focus</div>
+        <h3>From invisible to recommended</h3>
+        <div class="vs">
+          <div class="metric-title">Louisville procedure searches where ChatGPT names Commonwealth (of 4 we track)</div>
+          <div class="vs-row"><div class="lbl">September</div><div class="bar zero">0 of 4</div></div>
+          <div class="vs-row"><div class="lbl">Nov 19</div><div class="bar new" style="width:75%">3 of 4</div></div>
+        </div>
+        <p class="verdict">A brand-new presence, built in about nine weeks.</p>
+      </div>
+    </div>
+    <p class="src">Lexington: Ahrefs, Google US results for searches containing "lexington", September 14 vs. November 18, 2026. Louisville: our AI audit of September 3, 2026 vs. ChatGPT checked November 19, 2026.</p>
+  </div>
+</section>
+
+<section class="band alt">
+  <div class="wrap">
+    <div class="stack">
+      <div class="eyebrow lex">Part 1 · Lexington</div>
+      <h2>Lexington is getting a lift from the shared website</h2>
+      <p>We were hired for Louisville, but both offices share one website. The location pages, doctor bios, broken-link fixes and cleanup we did in October help every page on the site, including the ones that win Lexington searches.</p>
+    </div>
+
+    <div class="tiles">
+      <div class="tile">
+        <div class="num">12 → 21</div>
+        <p>Lexington searches where Google shows your site in its results, up from 12 in mid-September.</p>
+      </div>
+      <div class="tile">
+        <div class="num">9 → 13</div>
+        <p>Of those, the ones where you sit in Google's top 3.</p>
+      </div>
+      <div class="tile">
+        <div class="num">+55%</div>
+        <p>Estimated monthly visits from Lexington searches: about 111 in September, about 172 now.</p>
+      </div>
+    </div>
+    <p class="src">Source: Ahrefs, Google US organic results for commonwealtheyes.com, searches containing "lexington", September 14 vs. November 18, 2026. Visits are Ahrefs' estimates, not your own analytics.</p>
+
+    <div class="panel stack">
+      <h3>Where the new Lexington rankings come from</h3>
+      <div class="scroll-x">
+        <table class="t">
+          <thead><tr><th>Google search</th><th>Sept 14</th><th></th><th>Nov 18</th><th style="text-align:left">Page Google shows</th></tr></thead>
+          <tbody>
+            <tr><td>commonwealth eye surgery lexington ky</td><td><span class="r0">Not in Ahrefs</span></td><td class="arrow">→</td><td><span class="rank l1">#1</span></td><td class="note">Your new Locations page and home page</td></tr>
+            <tr><td>eye specialist lexington ky</td><td><span class="r0">Not in Ahrefs</span></td><td class="arrow">→</td><td><span class="rank l2">#2</span></td><td class="note">Doctors page</td></tr>
+            <tr><td>lexington eye doctors</td><td><span class="r0">Not in Ahrefs</span></td><td class="arrow">→</td><td><span class="rank l2">#2</span></td><td class="note">An older tag page</td></tr>
+            <tr><td>2353 alexandria drive lexington ky</td><td><span class="r0">Not in Ahrefs</span></td><td class="arrow">→</td><td><span class="rank l2">#2</span></td><td class="note">Contact page</td></tr>
+            <tr><td>eye surgery lexington ky</td><td><span class="rank l2">#3</span></td><td class="arrow">→</td><td><span class="rank l2">#3</span></td><td class="note">Now also the new Lexington page<span class="new-chip">New page</span></td></tr>
+            <tr><td>surgery center lexington ky</td><td><span class="r0">Not in Ahrefs</span></td><td class="arrow">→</td><td><span class="rank l2">#6</span></td><td class="note">The new Lexington page<span class="new-chip">New page</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="src">"Not in Ahrefs" means Ahrefs did not record your site in the top 100 for that search on September 14. The Locations page and the Lexington page were part of the location pages we built in October.</p>
+    </div>
+
+    <div class="panel stack">
+      <h3>Your big Lexington searches held their ground</h3>
+      <p>Your highest-volume Lexington searches were already near the top before we started, and they stayed there. Small moves of one or two spots are normal week to week.</p>
+      <div class="scroll-x">
+        <table class="t">
+          <thead><tr><th>Google search</th><th>Searches a month</th><th>Sept 14</th><th></th><th>Nov 18</th></tr></thead>
+          <tbody>
+            <tr><td>cataract surgery lexington ky</td><td>250</td><td><span class="rank l2">#3</span></td><td class="arrow">→</td><td><span class="rank l2">#4</span></td></tr>
+            <tr><td>lasik eye surgery lexington ky</td><td>100</td><td><span class="rank l2">#3</span></td><td class="arrow">→</td><td><span class="rank l2">#2</span></td></tr>
+            <tr><td>lasik lexington ky</td><td>70</td><td><span class="rank l2">#2</span></td><td class="arrow">→</td><td><span class="rank l2">#3</span></td></tr>
+            <tr><td>dr ferguson lexington ky</td><td>10</td><td><span class="rank l1">#1</span></td><td class="arrow">→</td><td><span class="rank l1">#1</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="src">Source: Ahrefs, Google US, September 14 vs. November 18, 2026. Monthly searches are Ahrefs' estimates for the US.</p>
+    </div>
+
+    <div class="callout lex">Lexington also tops Google's map results for "refractive lens exchange lexington ky": Commonwealth Eye Surgery first, with a 4.8 rating from about 1,200 reviews, and Dr. Ferguson's own listing third.</div>
+    <p class="src">Google search from Lexington, KY, November 19, 2026, via DataForSEO.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="stack">
+      <div class="eyebrow">Part 2 · AI answers in both cities</div>
+      <h2>ChatGPT now leans on pages we wrote, in <em>both</em> cities</h2>
+      <p>We asked ChatGPT the same four searches for each city on November 19. Commonwealth comes up in both. In Lexington, three of the four answers cite the Lexington page we published on October 30. In Louisville, Commonwealth went from not named in September to named on three of four.</p>
+    </div>
+
+    <div class="legend">
+      <span><i class="sw" style="background:var(--blue)"></i>Louisville</span>
+      <span><i class="sw" style="background:var(--teal)"></i>Lexington</span>
+    </div>
+
+    <div class="panel">
+      <div class="scroll-x">
+        <table class="t">
+          <thead>
+            <tr>
+              <th>Patient asks ChatGPT</th>
+              <th class="lou">Louisville<br>Sept</th>
+              <th class="lou">Louisville<br>Nov 19</th>
+              <th class="lex">Lexington<br>Nov 19</th>
+              <th style="text-align:left">Lexington source ChatGPT cites</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>EVO ICL surgeon in [city] KY</td><td><span class="r0">Not named</span></td><td><span class="rank r1">#1</span></td><td><span class="rank l1">#1</span></td><td class="note">Our Lexington page, naming all three surgeons</td></tr>
+            <tr><td>PRK eye surgery [city] KY</td><td><span class="r0">Not named</span></td><td><span class="rank r2">#2</span></td><td><span class="rank l1">#1</span></td><td class="note">Our Lexington page</td></tr>
+            <tr><td>Refractive lens exchange [city] KY</td><td><span class="r0">Not named</span></td><td><span class="rank r2">#2</span></td><td><span class="rank l2">#2</span></td><td class="note">Our Lexington page and your lens exchange page</td></tr>
+            <tr><td>Eye surgeon in [city] KY</td><td><span class="r0">Not named</span></td><td><span class="r0">Not named</span></td><td><span class="rank l1">#1</span></td><td class="note">Dr. Wörtz's Google listing, 392 reviews</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="src">ChatGPT with web search, asked once per search on November 19, 2026, via DataForSEO. Louisville September results are from our AI audit of September 3, 2026. We did not check Lexington in September, so there is no Lexington "before" column. AI answers change from one ask to the next: on November 16, Louisville ranked #1 for PRK and lens exchange and #5 for "eye surgeon"; today they read #2, #2 and not named.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="stack">
+      <div class="eyebrow">Part 3 · The two new office pages, side by side</div>
+      <h2>Lexington's page gets seen more. Louisville's gets <em>clicked</em> more.</h2>
+      <p>We built a page for each office in late October. Your Search Console shows how each did over the same three weeks. Lexington's page appeared in Google almost twice as often. Louisville's page ranked higher and turned views into clicks at a better rate, so it earned the same number of clicks with half the exposure.</p>
+    </div>
+
+    <div class="panel pair">
+      <div class="legend">
+        <span><i class="sw" style="background:var(--teal)"></i>Lexington page</span>
+        <span><i class="sw" style="background:var(--blue)"></i>Louisville page</span>
+      </div>
+      <div class="row">
+        <div class="metric-title">Times Google showed the page</div>
+        <div class="bars">
+          <div class="b"><span>Lexington</span><div class="fill lex" style="width:100%">1,379</div></div>
+          <div class="b"><span>Louisville</span><div class="fill lou" style="width:53%">736</div></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="metric-title">Clicks to the page</div>
+        <div class="bars">
+          <div class="b"><span>Lexington</span><div class="fill lex" style="width:100%">11</div></div>
+          <div class="b"><span>Louisville</span><div class="fill lou" style="width:91%">10</div></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="metric-title">Click rate: share of views that became a click</div>
+        <div class="bars">
+          <div class="b"><span>Lexington</span><div class="fill lex" style="width:59%">0.8%</div></div>
+          <div class="b"><span>Louisville</span><div class="fill lou" style="width:100%">1.36%</div></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="metric-title">Average position on Google (closer to 1 is better)</div>
+        <div class="bars">
+          <div class="b"><span>Lexington</span><div><span class="rank l2">15.7</span></div></div>
+          <div class="b"><span>Louisville</span><div><span class="rank r1">13.3</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tiles">
+      <div class="tile"><div class="num">1.9×</div><p>As many Google views for the Lexington page, a sign of the lift Lexington gets from the shared site.</p></div>
+      <div class="tile"><div class="num blue">1.7×</div><p>The click rate of the Louisville page versus Lexington's, the office where our work is focused.</p></div>
+    </div>
+    <p class="src">Source: your Google Search Console, page-level reports for commonwealtheyes.com/locations/lexington/ and commonwealtheyes.com/locations/louisville/, the same date range covering about the first three weeks after both pages went live, exported November 19, 2026. Both offices share one website and one Search Console, so these two pages are the cleanest office-by-office comparison available. Click counts are still small, so we will keep tracking them.</p>
+  </div>
+</section>
+
+<section class="band alt">
+  <div class="wrap">
+    <div class="stack">
+      <div class="eyebrow">Part 4 · Why the two offices move at different speeds</div>
+      <h2>Lexington adds to a lead. Louisville is <em>building</em> one.</h2>
+      <p>Both offices are better off than in September. The difference is where each one started, and where we put the work.</p>
+    </div>
+
+    <div class="grid2">
+      <div class="office lex">
+        <div class="tag lex">Lexington</div>
+        <b class="metric-title">Started near the top</b>
+        <p>In September, your site was already in Google's top 3 for 9 Lexington searches, and the main Google listing carries about 1,200 reviews. Each new page adds to that lead. Gains here show up as more searches and steadier rankings, not as a jump from nothing.</p>
+      </div>
+      <div class="office">
+        <div class="tag lou">Louisville</div>
+        <b class="metric-title">Started from almost nothing</b>
+        <p>In September, ChatGPT did not name Commonwealth for any Louisville search we track, and the office had no real page of its own. Weekly Google posts, the Louisville page, doctor bios and directory listings were all aimed here, so every piece is the first of its kind. That is why Louisville has moved further in nine weeks.</p>
+      </div>
+    </div>
+
+    <div class="panel stack">
+      <h3>Louisville on Google, from your November 16 report</h3>
+      <div class="tiles">
+        <div class="tile"><div class="num blue">#2</div><p>For "refractive lens exchange louisville ky", with 3 of the top 9 spots.</p></div>
+        <div class="tile"><div class="num blue">#2</div><p>For "prk eye surgery louisville ky", from your "What is PRK?" page.</p></div>
+        <div class="tile"><div class="num blue">3 pages</div><p>On page one for "evo icl surgeon louisville ky".</p></div>
+        <div class="tile"><div class="num blue">#1</div><p>For "commonwealth eye surgery louisville ky", so patients who know your name find you first.</p></div>
+      </div>
+      <p class="src">Source: the Commonwealth progress report of November 16, 2026, from your Google Search Console and live Google searches from Louisville that day.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="stack">
+      <div class="eyebrow">What this means</div>
+      <h2>Lexington benefits now. It can move faster with its own plan.</h2>
+    </div>
+    <div class="why">
+      <div class="panel">
+        <b>Lexington keeps the lift</b>
+        <p>Site-wide work, like the location pages, doctor bios and cleanup, keeps helping Lexington with no extra effort from your team.</p>
+      </div>
+      <div class="panel">
+        <b>Louisville stays the focus</b>
+        <p>Next up for Louisville: the LASIK and cataract pages waiting for your review, and Gemini, which does not name Commonwealth yet.</p>
+      </div>
+      <div class="panel">
+        <b>If you want Lexington at Louisville's pace</b>
+        <p>Lexington would need the same dedicated work: weekly Google posts on its own listings, review replies and Lexington procedure pages. We are glad to scope that with you.</p>
+      </div>
+    </div>
+
+    <footer class="stack">
+      <p class="src">How we measured: Google rankings for both cities come from Ahrefs (US results, September 14 vs. November 18, 2026). Ahrefs tracks few Louisville searches, so Louisville's Google results come from your own Search Console in the November 16 report. AI answers come from ChatGPT with web search, checked November 19, 2026, through DataForSEO; the Louisville September baseline is our AI audit of September 3, 2026. Map results: Google search from Lexington, KY, November 19, 2026. Estimated visits and monthly searches are Ahrefs' estimates.</p>
+      <p class="src">AI is evolving every day, and Local AI Registry's dedicated local AI research team is always figuring out the best approach.</p>
+      <p class="src">Steve Lee, CEO and Founder, Local AI Registry · 347-292-9294 · 9891 Irvine Center Dr, Irvine, CA 92618</p>
+    </footer>
+  </div>
+</section>
+
+</body>
+</html>
